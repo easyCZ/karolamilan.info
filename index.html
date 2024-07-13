@@ -16,6 +16,7 @@
             const iframe = document.getElementById('frame');
             if (iframe) {
                 if (screen.width > 800) {
+                    console.log('adjusting for width > 800')
                     iframe.style.position = 'fixed';
                     iframe.style.top = '-50px';
                     iframe.style.left = '0px';
@@ -29,6 +30,7 @@
                     iframe.style.overflow = 'hidden';
                     iframe.style.zIndex = '999999';
                 } else {
+                    console.log('adjusting for width < 800')
                     iframe.style.position = 'fixed';
                     iframe.style.top = '-51px';
                     iframe.style.left = '0px';
