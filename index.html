@@ -1,19 +1,12 @@
 <html>
 <head>
     <title>Karolina a Milan</title>
-</head>
-  
-<body>
-    <iframe 
-        id="frame"
-        src="https://pavlikmil.wixsite.com/karolina-milan" 
-        style="position:fixed; top:-50px; left:0px; bottom:0px; right:0px; width:100%; height:105%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript">
 
-        setInterval(() => {
+        function callback() {
             const iframe = document.getElementById('frame');
+            console.log('iframe', iframe)
             if (iframe) {
                 if (screen.width > 800) {
                     console.log('adjusting for width > 800')
@@ -44,9 +37,24 @@
                     iframe.style.overflow = '';
                     iframe.style.zIndex = '';
                 }
+
+                // reload the iframe
+                iframe.src += '';
             }
-        }, 1000)
-        </script>
+        }
+
+        window.addEventListener('resize', callback);
+    </script>
+</head>
+  
+<body>
+    <iframe 
+        id="frame"
+        src="https://pavlikmil.wixsite.com/karolina-milan" 
+        style="position:fixed; top:-50px; left:0px; bottom:0px; right:0px; width:100%; height:105%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
+    />
+
+   
 </body>
 
 </html>
